@@ -29,7 +29,7 @@ def generate_department():
 def generate_professor():
     departments = ['Computer Science', 'Engineering', 'Mathematics', 'Business Administration']
     professors = []
-    for i in range(1, 19):
+    for i in range(1, 26):
         id = f'P{i:03d}'
         ssn = fake.ssn()
         name = fake.name()
@@ -63,7 +63,7 @@ def generate_course():
 def generate_student():
     courses = ['CS101', 'ME101', 'IE101', 'BA101', 'MA101', 'EE101', 'CE101', 'ChE101', 'CAE101', 'CSE101']
     students = []
-    for i in range(1, 99):
+    for i in range(1, 101):
         id = f'S{i:04d}'
         ssn = fake.ssn()
         name = fake.name()
