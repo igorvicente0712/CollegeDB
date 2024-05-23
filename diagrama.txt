@@ -1,0 +1,64 @@
+erDiagram
+    aluno ||--o{ inscricao : Realiza
+    aluno }|--o| grupo_tcc: "Compoe"
+    aluno }|--|| curso: "Cursa"
+    aluno {
+        int id_aluno PK
+        string nome
+        string email
+        int id_curso FK
+        int id_grupo FK
+    }
+    professor ||--|| departamento : Chefia
+    professor ||--|{ grupo_tcc: Orienta
+    professor ||--o{ turma: Leciona
+    professor {
+        int id_prof PK
+        string nome
+        string email
+        int id_dept FK
+    }
+    departamento ||--|{ professor : Possui
+    departamento ||--o{ disciplina : Possui
+    departamento {
+        int id_dept PK
+        string nome
+        int id_chefe FK
+    }
+    curso ||--|{ matriz_curr: Possui
+    curso {
+        int id_curso PK
+        string nome
+    }
+    matriz_curr }|--|| disciplina: Possui
+    matriz_curr {
+        int id_curso PK, FK
+        string cod_disc PK, FK
+    }
+    disciplina {
+        string cod_disc PK
+        string nome
+        int id_dept FK
+    }
+    inscricao {
+        int id_insc PK
+        int id_aluno FK
+        int id_turma FK
+        int faltas
+        float media
+    }
+    turma }o--|| inscricao: Possui
+    turma }o--|| disciplina: Possui
+    turma {
+        int id_turma PK
+        int id_prof FK
+        string cod_disc FK
+        int ano
+        int semestre
+        int limite_faltas
+    }
+    grupo_tcc {
+        int id_grupo PK
+        int id_orientador FK
+        string status_aprovacao
+    }
