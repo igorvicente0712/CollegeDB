@@ -124,7 +124,7 @@ en = sql.create_engine(os.environ['DATABASE_URL'])
 
 # Caso tudo de errado
 # Lembrando que esta tudo com encoding 
-with open(os.path.join(r"D:\GitHub\CollegeDB", "sql", "inserts.sql"), "w") as f:
+with open(os.path.join("sql", "inserts.sql"), "w") as f:
     f.write(insert_depts)
     f.write("\n\n")
     
