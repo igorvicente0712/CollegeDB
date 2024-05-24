@@ -3,7 +3,7 @@
 CREATE TABLE IF NOT EXISTS departamento (
     id_dept INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     nome VARCHAR(100) NOT NULL,
-    id_chefe INT NOT NULL
+    id_chefe INT DEFAULT NULL
 );
 
 CREATE TABLE IF NOT EXISTS professor (
@@ -23,7 +23,7 @@ ALTER TABLE departamento
 
 CREATE TABLE IF NOT EXISTS curso (
     id_curso INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    curso VARCHAR(100) NOT NULL
+    nome VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS disciplina (
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS inscricao (
     id_aluno INT DEFAULT 0 NOT NULL,
     id_turma INT DEFAULT 0 NOT NULL,
     faltas INT DEFAULT 0,
-    media NUMERIC(2,1),
+    media NUMERIC(3,1),
     CONSTRAINT fk_insc_aluno
         FOREIGN KEY(id_aluno)
             REFERENCES aluno(id_aluno)

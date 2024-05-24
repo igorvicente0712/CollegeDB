@@ -9,7 +9,7 @@ erDiagram
         int id_curso FK
         int id_grupo FK
     }
-    professor ||--|| departamento : Chefia
+    professor |o--o| departamento : Chefia
     professor ||--|{ grupo_tcc: Orienta
     professor ||--o{ turma: Leciona
     professor {
@@ -18,7 +18,7 @@ erDiagram
         string email
         int id_dept FK
     }
-    departamento ||--|{ professor : Possui
+    departamento ||--o{ professor : Possui
     departamento ||--o{ disciplina : Possui
     departamento {
         int id_dept PK

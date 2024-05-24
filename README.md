@@ -12,6 +12,8 @@ Após a criação de seu cluster ou seu banco local, basta executar o script "cr
 <br><br>
 Após a execução, é necessário que seja executado o script "gera_dados.py", trocando as variáveis no início necessárias para a conexão com seu banco, gerando assim dados fictícios para teste.
 <br><br>
+Caso venha ter problemas na hora de inserir os dados diretamente no banco, é gerado um arquivo "inserts.sql" na pasta "sql" com os dados gerados, sendo apenas necessário executar o script em algum software que o permita.
+<br><br>
 Para vizualização das informações especificadas nos detalhes do projeto, basta procurar no arquivo "queries.sql" e executar em seu software de preferência.
 <br>
 
@@ -19,6 +21,7 @@ Para vizualização das informações especificadas nos detalhes do projeto, bas
 sqlalchemy-cockroachdb<br>
 sqlalchemy<br>
 Faker<br>
+unidecode<br>
 
 <h2>Integrantes</h2>
 <table>
