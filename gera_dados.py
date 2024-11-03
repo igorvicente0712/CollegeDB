@@ -15,7 +15,6 @@ fk = faker.Faker('pt_BR')
 # Numeros para definir quantidade gerada
 n_profs = 3 # Numero de profs por departamento
 n_disc_per_matr = 5 # Numero de disciplinas por matriz curricular
-n_grps = int(len(profs) * 2/3) # Numero total de grupos de tcc
 n_alunos = 100 # Numero total de alunos
 n_turmas_per_prof = 3 # Numero de turmas por professor
 
@@ -32,6 +31,7 @@ insert_depts
 
 # Professores
 profs = [[fk.name()] for _ in range(len(depts) * n_profs)]
+n_grps = int(len(profs) * 2/3) # Numero total de grupos de tcc
 [profs[i].append(".".join(unidecode(profs[i][0]).split(" ")[:2]).lower() + "@collegedb.com") for i in range(len(profs))]
 [profs[i].append(random.randint(1, len(depts))) for i in range(len(profs))]
 insert_profs = lista_de_lista_para_insert(profs, "professor", ["nome", "email", "id_dept"])
